@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Display from './components/display/display.component.jsx';
+import ButtonsContainer from './components/buttons/buttons-container.component.jsx';
+import { Container, CssBaseline, useMediaQuery } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import './App.css';
 
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    // const [prefersDarkMode, setMode] = useState(x);
+    const theme = React.useMemo(
+        () =>
+        createMuiTheme({
+            palette: {
+            type: prefersDarkMode ? 'dark' : 'light',
+            },
+        }),
+        [prefersDarkMode],
+    );
+
+    const [expression, setExpression] = useState(' ')
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline/>
+            <div className="App">
+                <Container>
+                    <Display expression={expression} />
+                    <ButtonsContainer expression={expression} setExpression={setExpression} />
+                </Container>
+            </div>
+        </ThemeProvider>
+    );
 }
 
 export default App;
