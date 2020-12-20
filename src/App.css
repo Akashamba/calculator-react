@@ -6,3 +6,15 @@
     margin: 0 auto;
     max-width: 400px!important;
 }
+
+.buttons-container {
+    height: 70vh!important;
+    width: 100vw!important;
+}
+ .MuiButton-label {
+     font-size: 2rem;
+ }
+
+ .MuiButtonBase-root {
+     vertical-align: center;
+ }

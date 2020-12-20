@@ -6,7 +6,8 @@ export default function ButtonsContainer({expression, setExpression}) {
 
     const calculate = () => {
         try {
-            setExpression(eval(expression));
+            // setExpression(eval(expression));
+            setExpression(45)
         }
         catch{
             setExpression('Math Error')

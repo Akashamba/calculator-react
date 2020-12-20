@@ -8,7 +8,6 @@ import './App.css';
 
 function App() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    // const [prefersDarkMode, setMode] = useState(x);
     const theme = React.useMemo(
         () =>
         createMuiTheme({
