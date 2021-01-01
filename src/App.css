@@ -4,17 +4,29 @@
 
 .MuiContainer-root {
     margin: 0 auto;
-    max-width: 400px!important;
+    padding: 0!important;
+}
+
+.MuiInputBase-root {
+    height: 40vh!important;
 }
 
 .buttons-container {
-    height: 70vh!important;
-    width: 100vw!important;
+    height: 59vh!important;
+    width: 100%!important;
 }
  .MuiButton-label {
      font-size: 2rem;
  }
 
  .MuiButtonBase-root {
+     padding: 5px!important;
+     margin: 0 !important;
      vertical-align: center;
+ }
+
+ .equal-to-symbol {
+     width: 100%;
+     height: 100%;
+     background-color: #FFA500!important;
  }

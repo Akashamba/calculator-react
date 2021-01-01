@@ -23,7 +23,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <CssBaseline/>
             <div className="App">
-                <Container>
+                <Container maxWidth="sm" >
                     <Display expression={expression} />
                     <ButtonsContainer expression={expression} setExpression={setExpression} />
                 </Container>

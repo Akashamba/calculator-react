@@ -38,8 +38,9 @@ export default function ButtonsContainer({expression, setExpression}) {
                     <Button onClick={() => enterSymbol(symbol.value) }>{symbol.label}</Button>
                 </Grid>
             ))}
-            <Grid item xs={6}>
-                    <Button onClick={() => calculate()}>=</Button>
+            <Grid item xs={2} />
+            <Grid item xs={4}>
+                    <Button className="equal-to-symbol" onClick={() => calculate()}>=</Button>
             </Grid>
         </Grid>
     );
