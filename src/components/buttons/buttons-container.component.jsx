@@ -34,7 +34,7 @@ export default function ButtonsContainer({expression, setExpression}) {
             </Grid>
 
             {symbols.map(symbol => (
-                <Grid item xs={3}>
+                <Grid item xs={3} key={symbol.value} >
                     <Button onClick={() => enterSymbol(symbol.value) }>{symbol.label}</Button>
                 </Grid>
             ))}
