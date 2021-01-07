@@ -26,11 +26,11 @@ export default function ButtonsContainer({expression, setExpression}) {
         <Grid container className='buttons-container'>
             
             <Grid item xs={3}>
-                <Button onClick={() => setExpression(' ') }>AC</Button>
+                <Button onClick={() => setExpression({value: ' ', isResult: false})}>AC</Button>
             </Grid>
 
             <Grid item xs={3}>
-                <Button onClick={() => setExpression(expression.value.toString().slice(0,-1)) }>⌫</Button>
+                <Button onClick={() => setExpression({value: expression.value.toString().slice(0,-1), isResult: false})}>⌫</Button>
             </Grid>
 
             {symbols.map(symbol => (
