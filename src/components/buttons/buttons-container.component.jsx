@@ -7,20 +7,19 @@ export default function ButtonsContainer({expression, setExpression}) {
     const calculate = () => {
         try {
             // eslint-disable-next-line no-eval
-            setExpression(eval(expression));
-            // setExpression(45)
+            setExpression({value: eval(expression.value), isResult: true});
         }
         catch{
-            setExpression('Math Error')
+            setExpression({value: 'Math Error', isResult: true})
         }
 
     }
 
     const enterSymbol = (symbol) => {
-        if(expression!=='Math Error')
-            setExpression(expression+symbol)
+        if(expression.value!=='Math Error' && expression.isResult===false)
+            setExpression({value: expression.value+symbol, isResult: false})
         else
-            setExpression(symbol)
+            setExpression({value: symbol, isResult: false})
     }
 
     return(
@@ -31,7 +30,7 @@ export default function ButtonsContainer({expression, setExpression}) {
             </Grid>
 
             <Grid item xs={3}>
-                <Button onClick={() => setExpression(expression.toString().slice(0,-1)) }>⌫</Button>
+                <Button onClick={() => setExpression(expression.value.toString().slice(0,-1)) }>⌫</Button>
             </Grid>
 
             {symbols.map(symbol => (

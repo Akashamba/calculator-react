@@ -24,7 +24,7 @@ function App() {
             <CssBaseline/>
             <div className="App">
                 <Container maxWidth="sm" >
-                    <p className="title" >Calculator v1</p>
+                    <p className="title" >Calculator v1.1</p>
                     <Display expression={expression} />
                     <ButtonsContainer expression={expression} setExpression={setExpression} />
                 </Container>

@@ -3,6 +3,6 @@ import {TextField} from '@material-ui/core';
 
 export default function Display({expression}) {
     return(
-        <TextField className='display' inputProps={{ disabled: true, style: {textAlign: 'right', fontSize: "5rem", height: '18vh'} }} fullWidth value={expression} />
+        <TextField className='display' inputProps={{ disabled: true, style: {textAlign: 'right', fontSize: "5rem", height: '18vh'} }} fullWidth value={expression.value} />
     )
 }
