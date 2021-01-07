@@ -6,8 +6,9 @@ export default function ButtonsContainer({expression, setExpression}) {
 
     const calculate = () => {
         try {
-            // setExpression(eval(expression));
-            setExpression(45)
+            // eslint-disable-next-line no-eval
+            setExpression(eval(expression));
+            // setExpression(45)
         }
         catch{
             setExpression('Math Error')
